@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import MainStackRouter from './routes/MainStackRouter';
+import { OriginContextProvider, DestinationContextProvider } from './context/context';
+//import {Provider} from "react-redux";
 
-export default function App() {
+
+//we have to import my store  
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+        <OriginContextProvider>
+      <DestinationContextProvider>
+          <MainStackRouter />
+      </DestinationContextProvider>
+        </OriginContextProvider>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({});
+
+export default App;
