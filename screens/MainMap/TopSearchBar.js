@@ -1,4 +1,4 @@
-import React,{useState,useRef,useContext,useEffect}from 'react'
+import React,{useRef}from 'react'
 import {
     StyleSheet,
     Text,
@@ -16,8 +16,8 @@ import Animated, {
 } from "react-native-reanimated"
 
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import {OriginContext,DestinationContext} from "../../context/context";
-import { carsAround,carsFarAway } from '../../global/data';
+//import {OriginContext,DestinationContext} from "../../context/context";
+//import { carsAround,carsFarAway } from '../../global/data';
 
 
 
@@ -26,8 +26,8 @@ import { carsAround,carsFarAway } from '../../global/data';
 const TopSearchBar = ({animatedIndex, bottomSheetModalRef}) => {
 
 // creating a function that would be able to close topsheet when it is cliced upon 
-  const {origin,dispatchOrigin} =useContext(OriginContext);
- const {destination,dispatchDestination} =useContext(DestinationContext);  
+  /* const {origin,dispatchOrigin} =useContext(OriginContext);
+ const {destination,dispatchDestination} =useContext(DestinationContext);  */ 
 
 
  
@@ -54,11 +54,11 @@ const animatedTopSearchBarStyles = useAnimatedStyle(() => {
         <Animated.View style={[styles.topSearchBar, animatedTopSearchBarStyles]}>
              <View style={styles.topSearchBarNav}>
                 <TouchableWithoutFeedback onPress={()=>{bottomSheetModalRef.current.collapse(withTiming())}}>
-                <Icon_font name='close' color='black' size={24} iconStyle={{fontWeight:600}}/>
+                <Icon_font name='close' color='black' size={24} iconStyle={{fontWeight:'600'}}/>
                 </TouchableWithoutFeedback>
                 <Text style={styles.topSearchBarTitle}>Your route</Text>
-                <TouchableWithoutFeedback onPress={()=>{}}>
-                <Icon_font name='plus' color='black' size={24} iconStyle={{fontWeight:600}}/>
+                <TouchableWithoutFeedback>
+                <Icon_font name='plus' color='black' size={24} iconStyle={{fontWeight:'600'}}/>
                 </TouchableWithoutFeedback>
             </View>
 
@@ -76,35 +76,23 @@ const animatedTopSearchBarStyles = useAnimatedStyle(() => {
             debounce={400}
           enablePoweredByContainer={false}
           minLength={2}
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            console.log(data);
+            console.log(details);
+          }}
           currentLocation={false}
           listViewDisplayed="auto"
           autoFocus ={true}
           returnkeyType={"search"}
           ref={textInput1}
-
-          onPress={(data,details=null)=>{
-            if(details){
-            dispatchOrigin({
-                type:"ADD_ORIGIN",
-                payload:{
-                    latitude:details.geometry.location.lat,
-                    longitude:details.geometry.location.lng,
-                    address:details.formatted_address,
-                    name:details.name
-                }
-            })
-        }
-        console.log(details.geometry.location.lng);
-carsAround.push({
-    latitude:details.geometry.location.lat,
-    longitude:details.geometry.location.lng
-})
-          }}
+          fetchDetails={true}
+          /* onPress={(data,details=null)=>{}} */
           
-        query={{
+       /*  query={{
             key:'AIzaSyCC6Yjtn30bFUIae0v6qzqva4Bj2YxQMBE',
             language:'en'
-        }}
+        }} */
         textInputProps={{ // Use View to override the default TextInput component
             style:styles.inputStyles, // Apply custom styles to the TextInput component
           }}
@@ -125,30 +113,13 @@ carsAround.push({
             currentLocation ={false}
             fetchDetails ={true}
             ref={textInput2}
-            onPress={(data,details=null)=>{
-                if(details){
-                dispatchDestination({type:"ADD_DESTINATION",
-                payload:{
-                    latitude:details.geometry.location.lat,
-                    longitude:details.geometry.location.lng,
-                    address:details.formatted_address,
-                    name:details.name
-                }})
-            }
-                carsFarAway.push({
-                    latitude:details.geometry.location.lat,
-                    longitude:details.geometry.location.lng
-                })
-            }}
-            query={{
+           /* onPress={()=>{}} */
+        
+           /*  query={{
                 key:'AIzaSyCC6Yjtn30bFUIae0v6qzqva4Bj2YxQMBE',
                 language: 'en'
-            }}
-            textInputProps={{
-         // Use View to override the default TextInput component
-                style:styles.inputStyles, // Apply custom styles to the TextInput component
-              }}
-          />
+            }} */
+            textInputProps={{style:styles.inputStyles,}}/>
           <View style={styles.imageContainer}>
           <Image source={require("../../assets/x.png")} style={{width:12,height:12,backgroundColor: '#f1f1f1'}}/>
           <Image source={require("../../assets/map.png")} style={styles.image}/>
@@ -158,63 +129,62 @@ carsAround.push({
         </Animated.View>
     )
 }
-
 const styles = StyleSheet.create({
     topSearchBar: {
-        position: "absolute",
-        left: 0,
-        top: -1,
-        width: Dimensions.get("screen").width,
-        height: 450,
-        padding: 20,
-        paddingTop: 50,
-        backgroundColor:'#FFF'
-        //backgroundColor: "blue",
+      position: "absolute",
+      left: 0,
+      top: -1,
+      width: Dimensions.get("screen").width,
+      height: 450,
+      padding: 20,
+      paddingTop: 50,
+      backgroundColor: "#FFF"
+      //backgroundColor: "blue",
     },
     topSearchBarNav: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginBottom: 20,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: 20,
     },
     topSearchBarTitle: {
-        fontSize: 16,
-        fontWeight: "700"
+      fontSize: 16,
+      fontWeight: "700"
     },
-    textboxContainer:{
-backgroundColor: '#fff',
-        borderRadius:3,
-        alignItems:'center',
-        paddingLeft:2,
-        borderColor:'green',
-        borderWidth:2,
-flexDirection:'row',
-alignitems:'center',
-gap:20,
-
+    textboxContainer: {
+      backgroundColor: "#fff",
+      borderRadius: 3,
+      alignItems: "center",
+      paddingLeft: 2,
+      borderColor: "green",
+      borderWidth: 2,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 20,
     },
-    textboxContainer1:{
-        backgroundColor: '#fff',
-        borderRadius:3,
-        alignItems:'center',
-        paddingLeft:2,
-        borderColor:'green',
-        borderWidth:2,
-flexDirection:'row',
-paddingHorizontal:10,
-padinTop:5,
-gap:20
+    textboxContainer1: {
+      backgroundColor: "#fff",
+      borderRadius: 3,
+      alignItems: "center",
+      paddingLeft: 2,
+      borderColor: "green",
+      borderWidth: 2,
+      flexDirection: "row",
+      paddingHorizontal: 10,
+      paddingTop: 5,
+      gap: 20,
     },
-    imageContainer:{
-        flexDirection:'row',
-        alignItems:'center',
-        marginLeft:1,
-        gap:5
+    imageContainer: {
+      flexDirection: "row",
+      alignItems: "center",
+      marginLeft: 1,
+      gap: 5,
     },
-    inputStyles:{
-        height:37
+    inputStyles: {
+      height: 37
     }
-    });
+  });
+  
     
    
 

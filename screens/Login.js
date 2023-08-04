@@ -24,6 +24,8 @@ const validatePhoneNumber =(phoneNumber)=>{
   return phoneNumberPattern.test(phoneNumber);
 };
 
+
+
   return (
 <SafeAreaView style={{flex:1,marginTop:80}}>
     <View style={styles.master_view}>
@@ -44,7 +46,7 @@ const validatePhoneNumber =(phoneNumber)=>{
         containerStyle={styles.inputButton}
          />
       </View>
-      <TouchableOpacity style={styles.button} onPress={{}}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Home')}>
       <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
 
@@ -58,11 +60,11 @@ const validatePhoneNumber =(phoneNumber)=>{
   <View style={styles.line} />
 </View>
 
-<TouchableOpacity style={styles.button_Icon} onPress={()=>{}}>
+<TouchableOpacity style={styles.button_Icon} onPress={()=>navigation.navigate('Home')}>
   <Image source={require('../assets/googleIcon.png')} style={styles.googleIcon}/>
       <Text style={styles.buttonTextIcon}>Sign in with Google</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_Icon}>
+      <TouchableOpacity style={styles.button_Icon} onPress={()=>navigation.navigate('Home')}>
         <Image source={require('../assets/facebookIcon.png')} style={styles.googleIcon}/>
       <Text style={styles.buttonTextIcon}>Sign in Facebook</Text>
       </TouchableOpacity>

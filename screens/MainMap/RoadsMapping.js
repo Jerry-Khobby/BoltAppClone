@@ -9,7 +9,6 @@ import Togglerbutton from './ButtonMenu';
 
 
 
-/* const TopSheetMemo = React.memo(TopSheet); */
 const RoadsMapping = ({navigation}) => {
   const bottomSheetModalRef = useRef();
 
@@ -37,18 +36,17 @@ const RoadsMapping = ({navigation}) => {
 export default RoadsMapping;
 
 const styles = StyleSheet.create({
-  roadMenu:{
-    top:25,
-    left:20,
-    backgroundColor:'#fff',
-    height:50,
-    width:50,
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:100,
+  roadMenu: {
+    top: 25,
+    left: 20,
+    backgroundColor: '#fff',
+    height: 50,
+    width: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 100,
   },
   container: {
     flex: 1,
   },
-  
-})
+});

@@ -27,7 +27,7 @@ const Rides = () => {
 </TouchableOpacity>
 <Text style={{
   fontSize:23,
-  fontWeight:600,
+  fontWeight:'600',
   color:'black'
 }}>My rides</Text>
 </View>
@@ -57,7 +57,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -91,7 +91,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -134,7 +134,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -168,7 +168,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -211,7 +211,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -245,7 +245,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -288,7 +288,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -322,7 +322,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -366,7 +366,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -400,7 +400,7 @@ const Rides = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{

@@ -13,25 +13,25 @@ import {
   Avatar,
 } from 'react-native-paper';
 
-const WorkRides = () => {
+const WorkRides = ({navigation}) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
-      drawerLockMode: 'locked-closed',
+    drawerLockMode: 'locked-closed',
     });
   }, [navigation]);
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
     <View style={styles.supportHeading}>
-    <TouchableOpacity onPress={() =>navigation.navigate('Home')}>
+    <TouchableOpacity onPress={() =>{navigation.navigate('Home')}}>
   <Icon_font name='arrowleft' color='black' size={24} iconStyle={{
-    fontWeight:600
+    fontWeight:'600'
   }}/>
   </TouchableOpacity>
   <Text style={{
     fontSize:27,
-    fontWeight:600,
+    fontWeight:'600',
     color:'black'
   }}>Work Profile</Text>
   </View>

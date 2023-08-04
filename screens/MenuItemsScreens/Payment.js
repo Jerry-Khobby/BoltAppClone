@@ -19,7 +19,7 @@ import {
 } from 'react-native-paper';
 
 
-const Payment = () => {
+const Payment = ({navigation}) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -27,7 +27,6 @@ const Payment = () => {
     });
   }, [navigation]);
   
-const navigation = useNavigation();
   return (
    <SafeAreaView style={styles.container}>
 <View styles={styles.mainItems}>

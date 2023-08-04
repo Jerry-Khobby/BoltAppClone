@@ -33,39 +33,11 @@ import Icon_Font from 'react-native-vector-icons/FontAwesome';
             </TouchableOpacity>
              </View>
         </View>
-{/* <View style={styles.row}>
-    <View style={styles.section}>
-        <Paragraph style={[styles.paragraph,styles.caption]}>80</Paragraph>
-        <Caption style={styles.caption}>Following</Caption>
-    </View>
-    <View style={styles.section}>
-        <Paragraph style={[styles.paragraph,styles.caption]}>100</Paragraph>
-        <Caption style={styles.caption}>Followers</Caption>
-
-    </View>
-
-</View> */}
-
-
-
-
-
     </View>
 
     <Drawer.Section style={styles.drawerSection}>
-    {/* <DrawerItem icon={({color, size}) => (<Icon_Font name="home" color="black" size={size}/>)}label="Home" 
-    labelStyle={{
-      fontSize:18,
-      color:'black',
-      fontWeight:'500'
-    }}
-     onPress={() => {props.navigation.navigate('Home')}}/> */}
     <DrawerItem icon={({color, size}) => (<Icon name="payment" color="black" size={size}/>)}label="Payment" 
-    labelStyle={{
-      fontSize:18,
-      color:'black',
-      fontWeight:'500'
-    }}
+    labelStyle={{fontSize:18,color:'black',fontWeight:'500'}}
      onPress={() => {props.navigation.navigate('Payment')}}/>
     <DrawerItem  icon={({color, size}) => (
      <Icon_Ant name="tago"  color="black" size={size} /> )} label="Promotion" 
@@ -74,7 +46,6 @@ import Icon_Font from 'react-native-vector-icons/FontAwesome';
       color:'black',
       fontWeight:'500'
     }}
-     
      onPress={() => {props.navigation.navigate('Promotion')}}/>
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -95,23 +66,14 @@ import Icon_Font from 'react-native-vector-icons/FontAwesome';
                         
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon_Font 
-                                name="suitcase" 
-                                color="black"
-                                size={size}
-                                />
-                            )}
+                                <Icon_Font name="suitcase" color="black" size={size}/>
+                                )}
                             label="Work Rides"
-                            labelStyle={{
-                              fontSize:18,
-                              color:'black',
-                              fontWeight:'500'
-                            }}
-                            onPress={() => {props.navigation.navigate('Workrides')}}
-                        />
+                            labelStyle={{fontSize:18,color:'black',fontWeight:'500'}}
+                            onPress={() => {props.navigation.navigate('Workrides')}}/>
 
 <DrawerItem 
-                            icon={({color, size}) => (
+    icon={({color, size}) => (
                                 <Icon 
                                 name="comment" 
                                 color="black"
@@ -185,7 +147,7 @@ import Icon_Font from 'react-native-vector-icons/FontAwesome';
       },
       caption: {
         fontSize: 14,
-        fontWeight:600,
+        fontWeight:'600',
         //fontFamily:'HurmeGeometricSans2-Reglar',
         lineHeight: 14,
       },

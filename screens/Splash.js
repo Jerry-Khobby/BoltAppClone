@@ -9,7 +9,7 @@ const SplashScreen = ({navigation}) => {
     // Simulating a 10-second delay for the splash screen
     const timer = setTimeout(() => {
       // Navigate to the main screen or desired screen
-      navigation.navigate('Home');
+      navigation.navigate("login");
     }, 3000); // 10 seconds in milliseconds
 
     return () => clearTimeout(timer); // Clean up the timer on component unmount
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: windowWidth,
-    height: windowHeight,
+    height: '100%',
     //resizeMode: 'contain',
   },
 });

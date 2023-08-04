@@ -11,41 +11,28 @@ import {
   Avatar,
 } from 'react-native-paper';
 
-const About = () => {
+const About = ({navigation}) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
       drawerLockMode: 'locked-closed',
     });
   }, [navigation]);
-  const navigation = useNavigation();
-  
+  //const navigation = useNavigation();
   return (
     <ScrollView>
     <SafeAreaView style={styles.container}>
     <View style={styles.supportHeading}>
   <TouchableOpacity onPress={() =>navigation.navigate('Home')}>
-<Icon_font name='arrowleft' color='black' size={24} iconStyle={{
-  fontWeight:600
-}}/>
+<Icon_font name='arrowleft' color='black' size={24} iconStyle={{fontWeight:600}}/>
 </TouchableOpacity>
-<Text style={{
-  fontSize:23,
-  fontWeight:600,
-  color:'black',
-
-}}>About</Text>
+<Text style={{fontSize:23,fontWeight:600,color:'black',}}>About</Text>
 </View>
-
 <View style={{marginTop:15}}>
   <Text style={{fontSize:14,color:'#5C5C5C'}}>Version CI.70.0 (91896739)</Text>
 </View>
-
 <View style={styles.paymentMethodItem}>
-    <View style={{
-      flexDirection:'row',
-      gap:1
-    }}>
+    <View style={{flexDirection:'row',gap:1}}>
     <Icon name='staro' color='black' size={25} />
     <Text style={styles.paymentMethodName}>Rate the App</Text>
     </View>
@@ -69,10 +56,7 @@ const About = () => {
     </View>
   </View>
   <View style={styles.line} />
-
   {/**  third  */}
-
-
   <View style={styles.paymentMethodItem}>
     <View style={{
       flexDirection:'row',
@@ -86,14 +70,9 @@ const About = () => {
     </View>
   </View>
   <View style={styles.line} />
-
   {/** fourth one  */}
-
   <View style={styles.paymentMethodItem}>
-    <View style={{
-      flexDirection:'row',
-      gap:1
-    }}>
+    <View style={{flexDirection:'row',gap:1}}>
     <Icon name='hearto' color='black' size={25} />
     <Text style={styles.paymentMethodName}>Careers at Bolt</Text>
     </View>
@@ -117,9 +96,6 @@ const About = () => {
     </View>
   </View>
   <View style={styles.line} />
-
-
-
 </SafeAreaView>
    </ScrollView>
   )

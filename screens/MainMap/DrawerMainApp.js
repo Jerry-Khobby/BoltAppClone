@@ -15,7 +15,6 @@ import PersonalDetails from '../MenuItemsScreens/PersonalDetails';
 const Drawer = createDrawerNavigator();
 const DrawerMainApp =()=>{
     return(
-    // <NavigationContainer>
 <Drawer.Navigator initialRouteName='Home' drawerContent={props=><DrawerContents {...props}/>}>
   <Drawer.Screen name="RoadsMapping" component={RoadsMapping}/>
   <Drawer.Screen name="Payment" component={Payment}/>
@@ -26,7 +25,6 @@ const DrawerMainApp =()=>{
   <Drawer.Screen name="Support" component={Support}/>
   <Drawer.Screen name="Workrides" component={WorkRides}/>
 </Drawer.Navigator>
-// </NavigationContainer>
 
 )
 }

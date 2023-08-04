@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   destinationSearchBoxText: {
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight:'700',
     gap:10
   },
   bottomSheet: {
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
   },
   hotelName: {
     fontSize: 16,
-    fontWeight: 500,
+    fontWeight: '500',
     marginBottom: 4,
   },
   address: {

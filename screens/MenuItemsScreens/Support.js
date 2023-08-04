@@ -23,7 +23,7 @@ const Support = () => {
 <View style={styles.supportHeading}>
   <TouchableOpacity onPress={() =>navigation.navigate('Home')}>
 <Icon_font name='close' color='black' size={24} iconStyle={{
-  fontWeight:600
+  fontWeight:'600'
 }}/>
 </TouchableOpacity>
 <Text style={{
@@ -60,7 +60,7 @@ const Support = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -82,7 +82,7 @@ const Support = () => {
   <Text style={{
     marginTop:25,
     fontSize:14,
-    fontWeight:500,
+    fontWeight:'500',
     color:'black',
     marginTop:40,
   }}>Get help with a recent ride</Text>
@@ -105,7 +105,7 @@ const Support = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -138,7 +138,7 @@ const Support = () => {
     <View>
     <Text style={{
       fontSize:14,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     }}>Inbox</Text>
     <Text style={{
@@ -167,7 +167,7 @@ style={{
 <View>
   <Text style={{
     fontSize:14,
-    fontWeight:500,
+    fontWeight:'500',
     color:'black',
     marginTop:30,
   }}>Get help with a recent ride</Text>
@@ -224,12 +224,12 @@ const styles = StyleSheet.create({
     helpHeading:{
       fontSize:24,
       marginTop:40,
-      fontWeight:500,
+      fontWeight:'500',
     },
     supportCase:{
       marginTop:20,
       fontSize:16,
-      fontWeight:500,
+      fontWeight:'500',
       color:'black',
     },
     chatTextArea:{
@@ -251,9 +251,6 @@ const styles = StyleSheet.create({
       width: '100%',
       marginTop: 10,
       gap:5,
-    },
-    belowItems:{
-      
     },
     belowItemsList:{
       flexDirection:'row',

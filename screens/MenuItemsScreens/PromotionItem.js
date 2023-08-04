@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,SafeAreaView,ScrollView,StatusBar,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View,SafeAreaView,TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import Icon_font from 'react-native-vector-icons/AntDesign';
