@@ -13,9 +13,9 @@ import PersonalDetails from '../MenuItemsScreens/PersonalDetails';
 
 
 const Drawer = createDrawerNavigator();
-const DrawerMainApp =()=>{
+const DrawerMainApp =({navigation})=>{
     return(
-<Drawer.Navigator initialRouteName='Home' drawerContent={props=><DrawerContents {...props}/>}>
+<Drawer.Navigator initialRouteName='RoadsMapping' drawerContent={props=><DrawerContents {...props}/>}>
   <Drawer.Screen name="RoadsMapping" component={RoadsMapping}/>
   <Drawer.Screen name="Payment" component={Payment}/>
   <Drawer.Screen name="About" component={About}/>

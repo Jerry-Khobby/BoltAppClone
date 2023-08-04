@@ -46,7 +46,7 @@ const validatePhoneNumber =(phoneNumber)=>{
         containerStyle={styles.inputButton}
          />
       </View>
-      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Home')}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('DrawerMainApp')}>
       <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
 

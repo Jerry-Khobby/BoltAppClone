@@ -18,7 +18,7 @@ const [currentPosition, setCurrentPosition] = useState({
   // grabs and sets user location
   useEffect(()=>{
     Location.requestForegroundPermissionsAsync().then(()=>{
-      Location.watchPositionAsync({accuracy: Location.Accuracy.BestForNavigation },(position)=>{
+      Location.watchPositionAsync({accuracy: Location.Accuracy.Highest },(position)=>{
         setCurrentPosition({
           longitude: position.coords.longitude,
           latitude: position.coords.latitude,
@@ -44,6 +44,9 @@ const googlePlacesSessionToken = useRef(uuid.v4())
        showsCompass={true}
        followsUserLocation={true}
        showsBuildings={true} 
+       showsTraffic={true}
+       showsIndoors={true}
+       showsPointsOfInterest={true}
      />
     </View>
     

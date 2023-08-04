@@ -10,16 +10,15 @@ const MainStackRouter =()=>{
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home"  
+            <Stack.Navigator initialRouteName="Splash"  
             screenOptions={{
                 headerShown: false,
                 headerShadowVisible: false
             }}>
                 <Stack.Screen name="Splash" component={SplashScreen}/>
-                <Stack.Screen name='Home' component={DrawerMainApp} />
                 <Stack.Screen name='login' component={Login} />
+                <Stack.Screen name='DrawerMainApp' component={DrawerMainApp} />
                 <Stack.Screen name='OTPVerification' component={CodeSentVerify}/>
-                
             </Stack.Navigator>
         </NavigationContainer>
     )

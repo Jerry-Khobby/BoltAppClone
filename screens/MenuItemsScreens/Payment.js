@@ -30,7 +30,7 @@ const Payment = ({navigation}) => {
   return (
    <SafeAreaView style={styles.container}>
 <View styles={styles.mainItems}>
-<TouchableOpacity onPress={() =>navigation.navigate('Home')}>
+<TouchableOpacity onPress={() =>navigation.navigate('DrawerMainApp')}>
   <Icon name="arrowleft"  color='black'size={27}/>
 </TouchableOpacity>
 <Text style={{

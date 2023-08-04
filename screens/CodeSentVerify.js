@@ -3,7 +3,7 @@ import React from 'react';
 import {AntDesign} from '@expo/vector-icons';
 
 {/** I will be visiting this page again to link the screens  */}
-const CodeSentVerify = () => {
+const CodeSentVerify = ({navigation}) => {
   return (
 
     <View style={styles.container}>
@@ -16,7 +16,7 @@ const CodeSentVerify = () => {
         <Text style={styles.numberText}>+233 243997081</Text>
         </View>
         <View>
-        <TouchableOpacity onPress={()=>{}}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Home')}>
 <Text  style={styles.linkToLogin}>Edit phone number</Text>
         </TouchableOpacity>
         </View>

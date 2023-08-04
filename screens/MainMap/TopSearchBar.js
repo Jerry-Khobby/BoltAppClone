@@ -18,6 +18,7 @@ import Animated, {
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 //import {OriginContext,DestinationContext} from "../../context/context";
 //import { carsAround,carsFarAway } from '../../global/data';
+import {key} from '../../reducers/keys';
 
 
 
@@ -87,12 +88,11 @@ const animatedTopSearchBarStyles = useAnimatedStyle(() => {
           returnkeyType={"search"}
           ref={textInput1}
           fetchDetails={true}
-          /* onPress={(data,details=null)=>{}} */
           
-       /*  query={{
-            key:'AIzaSyCC6Yjtn30bFUIae0v6qzqva4Bj2YxQMBE',
+        query={{
+            key:key,
             language:'en'
-        }} */
+        }} 
         textInputProps={{ // Use View to override the default TextInput component
             style:styles.inputStyles, // Apply custom styles to the TextInput component
           }}
@@ -115,10 +115,10 @@ const animatedTopSearchBarStyles = useAnimatedStyle(() => {
             ref={textInput2}
            /* onPress={()=>{}} */
         
-           /*  query={{
-                key:'AIzaSyCC6Yjtn30bFUIae0v6qzqva4Bj2YxQMBE',
+            query={{
+                key:key,
                 language: 'en'
-            }} */
+            }}
             textInputProps={{style:styles.inputStyles,}}/>
           <View style={styles.imageContainer}>
           <Image source={require("../../assets/x.png")} style={{width:12,height:12,backgroundColor: '#f1f1f1'}}/>
