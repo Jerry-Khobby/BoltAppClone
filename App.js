@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import MainStackRouter from './routes/MainStackRouter';
+import {Provider} from 'react-redux';
+import store from './reducers/store';
+import {OriginContextProvider,DestinationContext} from './context/context'
 
 
 
@@ -8,9 +11,11 @@ import MainStackRouter from './routes/MainStackRouter';
 
 const App = () => {
   return (
+    <Provider store={store}>
     <SafeAreaView style={{ flex: 1 }}>
-          <MainStackRouter />
+        <MainStackRouter />
     </SafeAreaView>
+  </Provider>
   );
 }
 

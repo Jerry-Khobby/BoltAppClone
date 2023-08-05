@@ -1,32 +1,31 @@
 import React,{createContext,useReducer} from 'react';
-import {OriginReducer,DestinationReducer} from  '../reducers/reducers';
-
-export const OriginContext = createContext()
-export const DestinationContext = createContext()
+import { originReducer,destinationReducer } from '../reducers/reducers';
 
 
+export const OriginContext =createContext();
+export const DestinationContext =createContext();
 
-export const OriginContextProvider = (props)=>{
-    const[origin,dispatchOrigin] =useReducer(OriginReducer,{
-                latitude:null,
-                longitude:null,
-                address:"",
-                name:""
+
+//defining how the context should look like 
+
+export const OriginContextProvider=(props)=>{
+    const [origin,dispatchOrigin]=useReducer(originReducer,{
+        latitude:null,
+        longitude:null,
     })
     return(
-        <OriginContext.Provider value ={{origin,dispatchOrigin}} >
+        <OriginContextProvider.Provider
+        value={{origin,dispatchOrigin}}>
             {props.children}
-        </OriginContext.Provider>
+        </OriginContextProvider.Provider>
     )
 }
 
 
 export const DestinationContextProvider = (props)=>{
-    const[destination,dispatchDestination] =useReducer(DestinationReducer,{
+    const[destination,dispatchDestination] =useReducer(destinationReducer,{
                 latitude:null,
                 longitude:null,
-                address:"",
-                name:""
     })
     return(
         <DestinationContext.Provider
