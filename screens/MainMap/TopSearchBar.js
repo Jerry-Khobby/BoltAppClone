@@ -5,7 +5,8 @@ import {
     View,
     Dimensions,
     TouchableWithoutFeedback,
-    Image 
+    Image,
+    Alert 
 } from 'react-native'
 import Icon_font from 'react-native-vector-icons/AntDesign';
 
@@ -38,14 +39,17 @@ function TopSearchBar({ animatedIndex, bottomSheetModalRef}) {
     const { lat, lng } = details.geometry.location;
 console.log(details.geometry.location.lat);
 console.log(details.geometry.location.lng);
+// trying to verify if the user left the place blank on the textfield 
+//the main  thing we will do is that, no user will input the location they are going to 
     // ...
     if (type == 'origin') {
       dispatch(setOriginLocation({latitude:lat, longitude:lng}));
       console.log('It is successfully done , Location gotten');
     } else {
       dispatch(setDestinationLocation({latitude:lat, longitude:lng}));
+      navigation.navigate('TrackerCarsMap');
     }
-    navigation.navigate('DrawerMainApp');
+
   };
     //showing out or printing out the location details 
   
@@ -94,7 +98,6 @@ console.log(details.geometry.location.lng);
             currentLocation={false}
             listViewDisplayed="auto"
             autoFocus={true}
-            ref={textInput1}
             fetchDetails={true}
 
             query={{
@@ -118,7 +121,6 @@ console.log(details.geometry.location.lng);
             currentLocation={false}
             fetchDetails={true}
             enableHighAccuracyLocation={true}
-            ref={textInput2}
             onPress={(data, details) =>
               // 'details' is provided when fetchDetails = true
               handlePlacedSelected(data, details, 'destination')}

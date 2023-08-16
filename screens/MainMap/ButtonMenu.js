@@ -8,7 +8,6 @@ const Togglerbutton = ({navigation}) => {
 
   // const navigation = useNavigation();
   
-
   return (
     <SafeAreaView style={{
       position:'absolute',

@@ -18,7 +18,7 @@ const [currentPosition, setCurrentPosition] = useState({
   // grabs and sets user location
   useEffect(()=>{
     Location.requestForegroundPermissionsAsync().then(()=>{
-      Location.watchPositionAsync({accuracy: Location.Accuracy.Highest },(position)=>{
+      Location.watchPositionAsync({accuracy: Location.Accuracy.BestForNavigation },(position)=>{
         setCurrentPosition({
           longitude: position.coords.longitude,
           latitude: position.coords.latitude,
